@@ -8,7 +8,7 @@ RandomPort::Pool.new.acquire do |port|
 end
 
 options = Selenium::WebDriver::Chrome::Options.new.tap do |opts|
-  opts.add_argument('--headless')
+  opts.add_argument('--headless') unless ENV['NOT_HEADLESS']
   opts.add_argument('--window-size=1280,1024')
 end
 
