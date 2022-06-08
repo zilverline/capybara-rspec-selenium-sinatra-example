@@ -28,4 +28,7 @@ RSpec.configure do |config|
     end
   end
 
+  config.after :each, :features do
+    Capybara.current_session.driver.quit
+  end
 end
